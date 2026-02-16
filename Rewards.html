@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Study Shield - Rewards &amp; Achievements</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .badge-glow:hover {
+            box-shadow: 0 0 15px rgba(19, 91, 236, 0.3);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-[#0d121b] antialiased">
+    <div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+        <!-- Top Navigation Bar -->
+        <header
+            class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 bg-white dark:bg-background-dark px-6 py-3 lg:px-10">
+            <div class="flex items-center gap-8">
+                <div class="flex items-center gap-3 text-primary">
+                    <div class="size-8 bg-primary rounded-lg flex items-center justify-center text-white">
+                        <span class="material-symbols-outlined">shield</span>
+                    </div>
+                    <h2 class="text-[#0d121b] dark:text-white text-xl font-bold leading-tight tracking-tight">Study
+                        Shield</h2>
+                </div>
+                <div class="hidden md:flex items-center gap-6">
+                    <a class="text-[#4c669a] hover:text-primary text-sm font-medium transition-colors"
+                        href="#">Dashboard</a>
+                    <a class="text-[#4c669a] hover:text-primary text-sm font-medium transition-colors"
+                        href="#">Sessions</a>
+                    <a class="text-primary text-sm font-bold border-b-2 border-primary pb-1" href="#">Rewards</a>
+                    <a class="text-[#4c669a] hover:text-primary text-sm font-medium transition-colors"
+                        href="#">Community</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <div
+                    class="hidden sm:flex items-center bg-primary/10 px-3 py-1.5 rounded-full gap-2 border border-primary/20">
+                    <span class="material-symbols-outlined text-primary text-sm">stars</span>
+                    <span class="text-primary font-bold text-sm tracking-tight">2,450 pts</span>
+                </div>
+                <button
+                    class="flex items-center justify-center rounded-full size-10 bg-primary/5 text-primary hover:bg-primary/10 transition-colors">
+                    <span class="material-symbols-outlined">notifications</span>
+                </button>
+                <div class="size-10 rounded-full border-2 border-primary/20 p-0.5">
+                    <img alt="User Profile" class="size-full rounded-full object-cover"
+                        data-alt="Professional male user profile portrait"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDx5_Z0wWAaPPLjwJt3wZf5PfziJdECsP8vPK7oHZiGtmjFjOPBtPfhmSpUtAr-AeJNEi9c8SruCMMA39E5g2WkWblL7E07UVxpNdKs0MVOi21xKiV9yNWA9jHldaCXBmeVV3jo5do4UTLhaUl0B83HCPjJos7bfrEKiHSDSCSNOvf8wX3CCMGSsuq0h9mRBoGUIX76eWQS3tbj7HnOjLxoDc8zv7gEclQHBdkRvzr5z9C_z88rMo_bQjUGQMbIT7Y2zpHaaU69uus" />
+                </div>
+            </div>
+        </header>
+        <main class="flex-1 max-w-7xl mx-auto w-full p-4 lg:p-8">
+            <!-- Hero Stats / User Progress Header -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                <div
+                    class="lg:col-span-2 bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-primary/5 flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
+                    <!-- Background Accent -->
+                    <div class="absolute -right-10 -top-10 size-40 bg-primary/5 rounded-full blur-3xl"></div>
+                    <div class="relative">
+                        <div class="size-32 rounded-full border-4 border-primary p-1 bg-white">
+                            <img alt="Profile Large" class="size-full rounded-full object-cover"
+                                data-alt="User avatar with a focused expression"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBpzu-wSn3z4WmM40CtYu9JWfpyxdNcD5tkACa86KEwNd3H_vOAn19J_DYf3N-YXH_nHKD758uIxclqFPpGutr3Sq-C_OGNY3pv1uF-9AUC6-WQy1OsHcTn31wUYhqvt6-WO_RAE_kV8jWInMNUsybswLCUBZa9_2kdYc6PaMohpuMQzHaxmBb0l_M9Z-poxaWfBdRwMyXeimHgT7rHk7RMMfGQ5-dqMfAt5g3NlkDfM7UkKxM6gfQK5MJWql9hnYFlPOGIEKxnwCs" />
+                        </div>
+                        <div
+                            class="absolute -bottom-2 right-0 bg-primary text-white text-xs font-bold px-2 py-1 rounded-full border-2 border-white">
+                            LVL 12</div>
+                    </div>
+                    <div class="flex-1 text-center md:text-left">
+                        <h1 class="text-2xl font-bold text-[#0d121b] dark:text-white mb-1">Alex Johnson, Scholar Rank
+                        </h1>
+                        <p class="text-[#4c669a] mb-4">You're in the top 5% of learners this month! 🚀</p>
+                        <div class="space-y-2">
+                            <div class="flex justify-between text-sm">
+                                <span class="font-medium text-primary">Path to Gold Rank</span>
+                                <span class="text-[#4c669a]">750 / 1,000 pts</span>
+                            </div>
+                            <div class="h-3 w-full bg-primary/10 rounded-full overflow-hidden">
+                                <div class="h-full bg-primary rounded-full" style="width: 75%;"></div>
+                            </div>
+                            <p class="text-xs text-[#4c669a] italic">Only 250 points until your next achievement unlock!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Quick Stats Sidebar -->
+                <div class="grid grid-cols-2 lg:grid-cols-1 gap-4">
+                    <div
+                        class="bg-primary rounded-xl p-4 text-white flex flex-col justify-center items-center text-center shadow-lg shadow-primary/20">
+                        <span class="material-symbols-outlined text-3xl mb-1">local_fire_department</span>
+                        <div class="text-2xl font-bold tracking-tight">15 Days</div>
+                        <div class="text-xs opacity-80 uppercase font-semibold">Current Streak</div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-slate-900 border border-primary/10 rounded-xl p-4 flex flex-col justify-center items-center text-center shadow-sm">
+                        <span class="material-symbols-outlined text-3xl mb-1 text-primary">psychology</span>
+                        <div class="text-2xl font-bold tracking-tight text-[#0d121b] dark:text-white">92%</div>
+                        <div class="text-xs text-[#4c669a] uppercase font-semibold">Focus Score</div>
+                    </div>
+                </div>
+            </div>
+            <!-- Content Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Achievements and Badges -->
+                <div class="lg:col-span-2 space-y-8">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">emoji_events</span>
+                                Badges Earned
+                            </h3>
+                            <button class="text-primary text-sm font-semibold hover:underline">View All</button>
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                            <!-- Badge 1 -->
+                            <div
+                                class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-primary/10 flex flex-col items-center text-center badge-glow transition-all cursor-pointer">
+                                <div
+                                    class="size-16 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 mb-3">
+                                    <span class="material-symbols-outlined !text-4xl">wb_sunny</span>
+                                </div>
+                                <h4 class="font-bold text-sm">Early Bird</h4>
+                                <p class="text-[10px] text-[#4c669a]">10 morning sessions</p>
+                            </div>
+                            <!-- Badge 2 -->
+                            <div
+                                class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-primary/10 flex flex-col items-center text-center badge-glow transition-all cursor-pointer">
+                                <div
+                                    class="size-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-3">
+                                    <span class="material-symbols-outlined !text-4xl">timer</span>
+                                </div>
+                                <h4 class="font-bold text-sm">Focus Master</h4>
+                                <p class="text-[10px] text-[#4c669a]">50 hours total</p>
+                            </div>
+                            <!-- Badge 3 -->
+                            <div
+                                class="bg-white dark:bg-slate-900 p-4 rounded-xl border border-primary/10 flex flex-col items-center text-center badge-glow transition-all cursor-pointer">
+                                <div
+                                    class="size-16 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 mb-3">
+                                    <span class="material-symbols-outlined !text-4xl">verified</span>
+                                </div>
+                                <h4 class="font-bold text-sm">Exam Ace</h4>
+                                <p class="text-[10px] text-[#4c669a]">Score 95%+ in math</p>
+                            </div>
+                            <!-- Locked Badge -->
+                            <div
+                                class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-dashed border-slate-300 flex flex-col items-center text-center opacity-60">
+                                <div
+                                    class="size-16 rounded-full bg-slate-200 flex items-center justify-center text-slate-500 mb-3">
+                                    <span class="material-symbols-outlined !text-4xl">lock</span>
+                                </div>
+                                <h4 class="font-bold text-sm">Night Owl</h4>
+                                <p class="text-[10px] text-[#4c669a]">Locking soon...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Marketplace Section -->
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">shopping_bag</span>
+                                Rewards Marketplace
+                            </h3>
+                            <div class="flex gap-2">
+                                <span
+                                    class="px-3 py-1 bg-white text-xs font-bold rounded-full border border-primary/10">All</span>
+                                <span
+                                    class="px-3 py-1 bg-primary text-white text-xs font-bold rounded-full">Perks</span>
+                                <span
+                                    class="px-3 py-1 bg-white text-xs font-bold rounded-full border border-primary/10">Physical</span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <!-- Reward Item 1 -->
+                            <div
+                                class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-primary/10 flex flex-col">
+                                <div class="h-32 bg-primary/5 flex items-center justify-center relative">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-6xl opacity-30 group-hover:scale-110 transition-transform">palette</span>
+                                    <div
+                                        class="absolute top-2 right-2 bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">
+                                        Featured</div>
+                                </div>
+                                <div class="p-4 flex-1 flex flex-col">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="font-bold text-base">Custom Profile Frame</h4>
+                                        <span class="text-primary font-bold">500 pts</span>
+                                    </div>
+                                    <p class="text-sm text-[#4c669a] flex-1">Stand out in the community with a gold
+                                        scholar frame.</p>
+                                    <button
+                                        class="mt-4 w-full bg-primary text-white py-2 rounded-lg font-bold text-sm hover:bg-blue-700 transition-colors">Redeem
+                                        Item</button>
+                                </div>
+                            </div>
+                            <!-- Reward Item 2 -->
+                            <div
+                                class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-primary/10 flex flex-col">
+                                <div class="h-32 bg-primary/5 flex items-center justify-center">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-6xl opacity-30 group-hover:scale-110 transition-transform">headphones</span>
+                                </div>
+                                <div class="p-4 flex-1 flex flex-col">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="font-bold text-base">Lofi Study Pack</h4>
+                                        <span class="text-primary font-bold">350 pts</span>
+                                    </div>
+                                    <p class="text-sm text-[#4c669a] flex-1">Unlock 5 exclusive lofi tracks for your
+                                        focus sessions.</p>
+                                    <button
+                                        class="mt-4 w-full bg-primary text-white py-2 rounded-lg font-bold text-sm hover:bg-blue-700 transition-colors">Redeem
+                                        Item</button>
+                                </div>
+                            </div>
+                            <!-- Reward Item 3 -->
+                            <div
+                                class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-primary/10 flex flex-col">
+                                <div class="h-32 bg-primary/5 flex items-center justify-center">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-6xl opacity-30 group-hover:scale-110 transition-transform">menu_book</span>
+                                </div>
+                                <div class="p-4 flex-1 flex flex-col">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="font-bold text-base">Premium Planner</h4>
+                                        <span class="text-primary font-bold">1,200 pts</span>
+                                    </div>
+                                    <p class="text-sm text-[#4c669a] flex-1">A downloadable, printable interactive study
+                                        template.</p>
+                                    <button
+                                        class="mt-4 w-full bg-primary text-white py-2 rounded-lg font-bold text-sm hover:bg-blue-700 transition-colors">Redeem
+                                        Item</button>
+                                </div>
+                            </div>
+                            <!-- Reward Item 4 -->
+                            <div
+                                class="group bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-primary/10 flex flex-col">
+                                <div class="h-32 bg-primary/5 flex items-center justify-center">
+                                    <span
+                                        class="material-symbols-outlined text-primary text-6xl opacity-30 group-hover:scale-110 transition-transform">card_giftcard</span>
+                                </div>
+                                <div class="p-4 flex-1 flex flex-col">
+                                    <div class="flex justify-between items-start mb-2">
+                                        <h4 class="font-bold text-base">$5 Bookstore Credit</h4>
+                                        <span class="text-primary font-bold">2,500 pts</span>
+                                    </div>
+                                    <p class="text-sm text-[#4c669a] flex-1">Convert your study efforts into real book
+                                        rewards.</p>
+                                    <button
+                                        class="mt-4 w-full border border-primary text-primary py-2 rounded-lg font-bold text-sm hover:bg-primary/5 transition-colors">Earn
+                                        More Pts</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Leaderboard & Social Sidebar -->
+                <div class="space-y-8">
+                    <div class="bg-white dark:bg-slate-900 rounded-xl p-6 shadow-sm border border-primary/10">
+                        <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-primary">leaderboard</span>
+                            Top Scholars
+                        </h3>
+                        <div class="space-y-4">
+                            <!-- Rank 1 -->
+                            <div class="flex items-center gap-3 p-2 bg-primary/5 rounded-lg border border-primary/10">
+                                <span class="font-bold text-primary w-4">1</span>
+                                <div class="size-8 rounded-full overflow-hidden">
+                                    <img alt="User Rank 1" class="size-full object-cover"
+                                        data-alt="Avatar of female student ranking first"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo7B1ar05t4EioUqg2ZOQz57AMR5VPJqHikOwBycW1jub8XK3hKMtjdgqBfBIzuVynczwGe3_7JNXwY4DNd0cw5rp4u0COTf5Ltrec0mWAZLDLRQx0q5qsTenYWJliJ1c-1NzXPioTX4iidQmxkZnNpZ_cUrsOVVeu0CvvRG8psqskQoXmdTYRYKQVcVnYhXa9CcJqBNLpL6x1vuy3FoOOVf3tWffWRlIbAZUTG8Xd3AQVV7QQlpA7GekiO9_O7KeRjayaSWXeiYg" />
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-bold">Sarah W.</p>
+                                    <p class="text-[10px] text-[#4c669a]">Focus Master</p>
+                                </div>
+                                <span class="text-xs font-bold text-primary">4,890 pts</span>
+                            </div>
+                            <!-- Rank 2 -->
+                            <div class="flex items-center gap-3 p-2">
+                                <span class="font-bold text-[#4c669a] w-4">2</span>
+                                <div class="size-8 rounded-full overflow-hidden">
+                                    <img alt="User Rank 2" class="size-full object-cover"
+                                        data-alt="Avatar of male student ranking second"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR65J8QPYPkAJK5l7M94IlAxe35U7IsCZQukkbXuZ6VksgDNdqhiNkH79WUJiuCUvqz0TfTjrG8yjmpnsgAZ3ePD_MGSLrKTQ4F8mtN6eUMJymrgmDZD3ZdaithWDhJGWt59BL7eq5rArDnz0DFcpG8X-4SrRgFq973SDRCqEwud8qXspl3qSVuQAmMXWIrNc0AQpsRpQQ2Fe3v6Mu6pTpkY8E-XYqFKeAUnSqOhvw8N0pRWl-RAczir5tkE45LgrZS36p0yArkc0" />
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-bold">Liam N.</p>
+                                    <p class="text-[10px] text-[#4c669a]">Exam Specialist</p>
+                                </div>
+                                <span class="text-xs font-bold text-[#4c669a]">4,210 pts</span>
+                            </div>
+                            <!-- You (Alex) -->
+                            <div class="flex items-center gap-3 p-2 border-t border-slate-100 pt-4 mt-2">
+                                <span class="font-bold text-[#4c669a] w-4 italic">14</span>
+                                <div class="size-8 rounded-full overflow-hidden border border-primary">
+                                    <img alt="User Rank 14" class="size-full object-cover"
+                                        data-alt="User's own profile avatar in list"
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB8EWtwFcVGQt-fSlsQ8keyM6m1AoRFm-3Quv7rUefQccNyu-RJJJnEoZhgMn7qFuIRih-QOolGQ8Hke4d9gL7htPytEC_trpkd7fZcZ-PTQO1AsI9tUK2lSxleXxUqYlrBPHkh7Yf1uKuoO8bPTJYQgdpKhTHjIMMohlPseIF0aNehmGWd9r5XbKL8YbsL72zMr6H04ATcSq_G1YKSMpRA4YMgiiPLkWFTzOguxbOQEQeIhJrRGdHvsKdCj1e2aFYs6Z-kCAmvmE" />
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-sm font-bold">Alex J. (You)</p>
+                                    <p class="text-[10px] text-primary">Rising Star</p>
+                                </div>
+                                <span class="text-xs font-bold text-[#4c669a]">2,450 pts</span>
+                            </div>
+                        </div>
+                        <button
+                            class="mt-6 w-full py-2 text-primary text-xs font-bold border border-primary/20 rounded-lg hover:bg-primary/5 transition-colors">View
+                            Full Leaderboard</button>
+                    </div>
+                    <!-- Tips for Success -->
+                    <div class="bg-gradient-to-br from-primary to-blue-700 rounded-xl p-6 text-white">
+                        <h3 class="text-lg font-bold mb-2 flex items-center gap-2">
+                            <span class="material-symbols-outlined">lightbulb</span>
+                            Did you know?
+                        </h3>
+                        <p class="text-sm opacity-90 mb-4">You earn 2x points for focus sessions during your scheduled
+                            'Peak Concentration' hours!</p>
+                        <a class="text-xs font-bold underline" href="#">Check your schedule</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- Fixed Bottom Bar for Mobile Navigation -->
+        <nav
+            class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 px-6 py-2 flex justify-between items-center z-50">
+            <button class="flex flex-col items-center gap-1 text-[#4c669a]">
+                <span class="material-symbols-outlined">grid_view</span>
+                <span class="text-[10px]">Home</span>
+            </button>
+            <button class="flex flex-col items-center gap-1 text-[#4c669a]">
+                <span class="material-symbols-outlined">timer</span>
+                <span class="text-[10px]">Study</span>
+            </button>
+            <button class="flex flex-col items-center gap-1 text-primary">
+                <span class="material-symbols-outlined">emoji_events</span>
+                <span class="text-[10px] font-bold">Rewards</span>
+            </button>
+            <button class="flex flex-col items-center gap-1 text-[#4c669a]">
+                <span class="material-symbols-outlined">settings</span>
+                <span class="text-[10px]">Profile</span>
+            </button>
+        </nav>
+    </div>
+</body>
+
+</html>

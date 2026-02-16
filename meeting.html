@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <title>Study Shield - Live Meeting</title>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 antialiased overflow-hidden">
+    <!-- Main Layout Container -->
+    <div class="flex flex-col h-screen w-full">
+        <!-- Top Navigation Header -->
+        <header class="flex items-center justify-between border-b border-slate-200 bg-white px-6 py-3">
+            <div class="flex items-center gap-4">
+                <div class="flex items-center justify-center size-10 bg-primary/10 rounded-lg text-primary">
+                    <span class="material-symbols-outlined font-bold">shield_with_heart</span>
+                </div>
+                <div>
+                    <h1 class="text-lg font-bold leading-tight tracking-tight text-slate-900">Advanced Mathematics -
+                        Section 4</h1>
+                    <div class="flex items-center gap-2">
+                        <span class="inline-block size-2 rounded-full bg-red-500 animate-pulse"></span>
+                        <p class="text-xs font-medium text-slate-500 uppercase tracking-wider">Live • 00:42:15</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2 bg-slate-100 px-3 py-1.5 rounded-full">
+                    <span class="material-symbols-outlined text-sm text-slate-600">group</span>
+                    <span class="text-xs font-semibold text-slate-700">24 Students</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button
+                        class="flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 rounded-lg text-slate-700 text-sm font-semibold transition-colors">
+                        <span class="material-symbols-outlined text-lg">pan_tool</span>
+                        <span>Raise Hand</span>
+                    </button>
+                    <button
+                        class="flex items-center gap-2 px-4 py-2 bg-red-50 hover:bg-red-100 rounded-lg text-red-600 text-sm font-bold transition-colors border border-red-100">
+                        <span class="material-symbols-outlined text-lg">call_end</span>
+                        <span>End Meeting</span>
+                    </button>
+                </div>
+                <div class="size-10 rounded-full border-2 border-primary/20 bg-cover bg-center"
+                    data-alt="Student profile picture"
+                    style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuByyv3-QyMUIrUEAKHPVKP-bSq_EHJPJfRdoD35RO_Kf-FB3fZXHhuhqdTmfWo596z57XegSLM6F4-s-CTlfq2iBxLAGzlgguK_-cmvsDOmEPY_MOHTOozLVECN7UkGn-tFSgNdZL5doCPtD7EGZqEcNMtBwUONzZFoX1OwJmrNyFdMYqy-a7fSHznSCXCVBxXBdzAxA6CVH9a0Pcxb5HU9n2NP9ANlc-KyBBJ3dZGc24n-VhahuA0V7Ms9_G0IKcFEmvjMiNdo1Go')">
+                </div>
+            </div>
+        </header>
+        <!-- Main Content Area -->
+        <main class="flex flex-1 overflow-hidden p-4 gap-4">
+            <!-- Video Stage (Left/Center) -->
+            <div class="flex-1 flex flex-col gap-4">
+                <!-- Primary Video Container -->
+                <div class="relative flex-1 bg-slate-900 rounded-xl overflow-hidden shadow-sm group">
+                    <div class="absolute inset-0 bg-cover bg-center opacity-90"
+                        data-alt="Teacher presenting in front of a chalkboard"
+                        style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAJBIzx3-T8W1zYsKcv2FdTrr4RzJezPJeI0BT4a1FDxak4mkdPLANfEsHEWJN1RsSFQWx_b9TrKw7kPlgKwPEQv0nHIcGClIHWVS73TFWY5bFGhUz0umAsE1DoHiywIA2kHHWIO9Wlno3kaVjNXV6Zt6fT8OZaa7n8q7UtrtJpM7EFgJAHR2xbxrzOsboc6GIgmpQWPGPADgmgOR-AsDFL5wf7U8XftBADk3oqwdJqwSxbEPt7Z09qSBT2qnyfjoRm8lcw415F0Ic')">
+                    </div>
+                    <!-- Teacher Name Tag -->
+                    <div
+                        class="absolute bottom-4 left-4 bg-black/50 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/20 flex items-center gap-2">
+                        <div class="size-2 rounded-full bg-primary"></div>
+                        <span class="text-white text-sm font-medium">Prof. Sarah Jenkins (Presenter)</span>
+                    </div>
+                    <!-- Overlay Controls (Floating) -->
+                    <div
+                        class="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                        <button
+                            class="size-12 rounded-full bg-white/20 backdrop-blur-md hover:bg-white/30 text-white flex items-center justify-center">
+                            <span class="material-symbols-outlined">mic_off</span>
+                        </button>
+                        <button
+                            class="size-12 rounded-full bg-white/20 backdrop-blur-md hover:bg-white/30 text-white flex items-center justify-center">
+                            <span class="material-symbols-outlined">videocam</span>
+                        </button>
+                        <button
+                            class="size-12 rounded-full bg-white/20 backdrop-blur-md hover:bg-white/30 text-white flex items-center justify-center">
+                            <span class="material-symbols-outlined">present_to_all</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Student Grid (Thumbnails) -->
+                <div class="h-32 flex gap-4">
+                    <div
+                        class="aspect-video h-full rounded-lg bg-slate-200 overflow-hidden relative border-2 border-primary shadow-lg shadow-primary/10">
+                        <div class="absolute inset-0 bg-cover bg-center" data-alt="Student watching the screen"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA8wbJcVG9dMQWxgVYwOxznUhWy8q7b1VOo_57dn6_RjBn4-oRWuMF0Zwu59vkzr1swYFJVqNkI4m7xrnhu0jaN3E81XLoW5M4G82kR9IPZGoAF7dXJYypvCl0eAq6wswGxV4fQ1Snz8deCCWxtfTfFcZvs0ouu1zaHkfpChkonWKqShK3IiWJ6rfklv5S3QT2vmesevip0HiBXPixJr37fpjRKUpAAH-gvVOxDOfrX_D4U0reikqePDGM2GuSKi45uxcqHtt9sS0k')">
+                        </div>
+                        <span
+                            class="absolute bottom-2 left-2 text-[10px] bg-black/40 px-1.5 py-0.5 rounded text-white backdrop-blur-sm">You
+                            (Alex)</span>
+                    </div>
+                    <div class="aspect-video h-full rounded-lg bg-slate-200 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-cover bg-center" data-alt="Student nodding in agreement"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCk6OunbM1CzlA0OETakvVtVReJJZOEBDJtwBYSCR7HaWXLDfzPeakiMe49vCtIBSRU3vDx9sp-gyaOzNXuCWWXvQLezsu7DhbV69Xiu6o9J2T5dbankziP2YI5GF_MqNSUCqNLiH8vQwE68zBH65EQQvas2d3DsiKwDu6uOe0FF7NoIpEG4g-UyCL1nRC8YSrl2-a6_kKIN-rzdZmXljpNIKk-_zxSk4OP_-xSWPd_WCstFcDiJ-DCqtgkQRa1f1exRBkEDWYMd4k')">
+                        </div>
+                        <span
+                            class="absolute bottom-2 left-2 text-[10px] bg-black/40 px-1.5 py-0.5 rounded text-white backdrop-blur-sm">Mia
+                            Wong</span>
+                    </div>
+                    <div class="aspect-video h-full rounded-lg bg-slate-200 overflow-hidden relative">
+                        <div class="absolute inset-0 bg-cover bg-center" data-alt="Student taking notes"
+                            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC43Dc1XO40yTotZIzoa0YVOlIwjYVUKUMRf8pGjAJFwezcurQNY8poXogm2HIjid2dSgdr0GxCJOoc_FV4ypspW5RjnOyn5szI8U3PF_k-rt9vM0p6aPmhKe9eX0vdWTDfUnCXaQ2-U-j-EsQHXi4bB1XiMhEFv61tQvtM52scFeEaplKOUQaO5-XUArMSpuXWFIdSiL8Z9_JdRMZAw4nlpmwtgUQWT0fqZy-AQii4kj9hgkVFzykN8owjLIotMd56oOoB2HYaeo0')">
+                        </div>
+                        <span
+                            class="absolute bottom-2 left-2 text-[10px] bg-black/40 px-1.5 py-0.5 rounded text-white backdrop-blur-sm">Lucas
+                            Grey</span>
+                    </div>
+                    <div
+                        class="flex-1 flex items-center justify-center bg-white border border-dashed border-slate-300 rounded-lg">
+                        <span class="text-slate-400 text-sm font-medium">+21 others</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Action Sidebar (Right) -->
+            <aside class="w-80 flex flex-col gap-4">
+                <!-- Focus Meter Card -->
+                <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-sm font-bold text-slate-800 uppercase tracking-tight">Focus Meter</h3>
+                        <span class="material-symbols-outlined text-primary text-xl">insights</span>
+                    </div>
+                    <div class="flex items-end gap-3 mb-3">
+                        <span class="text-4xl font-bold text-slate-900">88%</span>
+                        <span class="text-xs font-semibold text-green-600 mb-1 flex items-center">
+                            <span class="material-symbols-outlined text-sm">arrow_upward</span> 3%
+                        </span>
+                    </div>
+                    <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden mb-2">
+                        <div class="bg-primary h-full rounded-full" style="width: 88%"></div>
+                    </div>
+                    <p class="text-xs text-slate-500">Your attention score is excellent today. Keep it up!</p>
+                </div>
+                <!-- Chat / Participants Sidebar -->
+                <div class="flex-1 flex flex-col bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
+                    <div class="flex border-b border-slate-100">
+                        <button
+                            class="flex-1 py-3 text-sm font-bold text-primary border-b-2 border-primary">Chat</button>
+                        <button
+                            class="flex-1 py-3 text-sm font-semibold text-slate-400 hover:text-slate-600 transition-colors">Participants</button>
+                    </div>
+                    <!-- Messages Area -->
+                    <div class="flex-1 overflow-y-auto p-4 space-y-4">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs font-bold text-slate-800">Mia Wong</span>
+                                <span class="text-[10px] text-slate-400">10:42 AM</span>
+                            </div>
+                            <p
+                                class="text-sm text-slate-600 bg-slate-50 p-2.5 rounded-lg rounded-tl-none border border-slate-100">
+                                Does anyone know which page the formula is on?</p>
+                        </div>
+                        <div class="flex flex-col gap-1">
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs font-bold text-slate-800">Lucas Grey</span>
+                                <span class="text-[10px] text-slate-400">10:43 AM</span>
+                            </div>
+                            <p
+                                class="text-sm text-slate-600 bg-slate-50 p-2.5 rounded-lg rounded-tl-none border border-slate-100">
+                                It's on page 142, near the bottom.</p>
+                        </div>
+                        <div class="flex flex-col gap-1 items-end">
+                            <div class="flex items-center gap-2">
+                                <span class="text-[10px] text-slate-400">10:44 AM</span>
+                                <span class="text-xs font-bold text-primary">You</span>
+                            </div>
+                            <p class="text-sm text-white bg-primary p-2.5 rounded-lg rounded-tr-none shadow-sm">Thanks,
+                                Lucas!</p>
+                        </div>
+                        <!-- Hand Raise Notification -->
+                        <div class="flex items-center gap-3 bg-primary/5 p-3 rounded-lg border border-primary/10">
+                            <div class="size-8 rounded-full bg-primary flex items-center justify-center text-white">
+                                <span class="material-symbols-outlined text-base">pan_tool</span>
+                            </div>
+                            <div class="flex-1">
+                                <p class="text-[11px] font-bold text-primary uppercase">Hand Raised</p>
+                                <p class="text-xs text-slate-700">Sarah has a question</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Chat Input -->
+                    <div class="p-3 border-t border-slate-100 bg-slate-50/50">
+                        <div class="relative">
+                            <input
+                                class="w-full pl-4 pr-12 py-2.5 bg-white border border-slate-200 rounded-xl focus:ring-2 focus:ring-primary/20 focus:border-primary text-sm transition-all"
+                                placeholder="Type a message..." type="text" />
+                            <button
+                                class="absolute right-2 top-1/2 -translate-y-1/2 size-8 flex items-center justify-center bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors shadow-sm">
+                                <span class="material-symbols-outlined text-sm">send</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Session Stats Quick View -->
+                <div class="bg-slate-900 p-4 rounded-xl text-white">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-white/10 rounded-lg">
+                            <span class="material-symbols-outlined text-primary">timer</span>
+                        </div>
+                        <div>
+                            <p class="text-[10px] text-slate-400 font-medium uppercase tracking-wider">Session Time Left
+                            </p>
+                            <p class="text-sm font-bold">17m 45s</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </main>
+        <!-- Bottom Status Bar -->
+        <footer
+            class="bg-white border-t border-slate-200 px-6 py-2 flex items-center justify-between text-[11px] text-slate-500 font-medium">
+            <div class="flex items-center gap-4">
+                <div class="flex items-center gap-1.5 text-green-600">
+                    <span class="material-symbols-outlined text-sm">signal_cellular_alt</span>
+                    <span>Stable Connection</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                    <span class="material-symbols-outlined text-sm">verified_user</span>
+                    <span>Study Shield Active</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <a class="hover:text-primary transition-colors" href="#">Privacy Settings</a>
+                <a class="hover:text-primary transition-colors" href="#">Help &amp; Support</a>
+                <span class="text-slate-300">|</span>
+                <span>Session ID: #MATH4-2023-X1</span>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
