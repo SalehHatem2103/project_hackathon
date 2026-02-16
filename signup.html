@@ -187,6 +187,31 @@
                                     placeholder="••••••••" type="password" />
                             </div>
                         </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">Credit Card Number</label>
+                            <div class="relative">
+                                <input
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                                    placeholder="1234 5678 9012 3456" type="text" maxlength="19" id="card_number" />
+                                <span class="absolute right-4 top-3.5 text-gray-400">
+                                    <span class="material-symbols-outlined">credit_card</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">Expiry Date</label>
+                                <input
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                                    placeholder="MM/YY" type="text" maxlength="5" />
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-1">CVV</label>
+                                <input
+                                    class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                                    placeholder="123" type="text" maxlength="3" />
+                            </div>
+                        </div>
                     </div>
                     <div class="flex items-center gap-2 py-2">
                         <input class="rounded text-primary focus:ring-primary w-4 h-4" id="terms" type="checkbox" />
@@ -217,6 +242,15 @@
             Secure Educational Infrastructure
         </footer>
     </div>
+
+    <script>
+        // Format credit card number with spaces
+        document.getElementById('card_number').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\s/g, '');
+            let formattedValue = value.replace(/(\d{4})/g, '$1 ').trim();
+            e.target.value = formattedValue;
+        });
+    </script>
 </body>
 
 </html>
