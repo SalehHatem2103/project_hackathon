@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Study Shield - Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "accent-orange": "#f97316",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
+    <!-- Top Navigation Bar -->
+    <header
+        class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-md border-b border-slate-200/60 dark:border-slate-800/60 shadow-sm">
+        <div class="max-w-[1440px] mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="bg-primary p-1.5 rounded-lg flex items-center justify-center">
+                    <span class="material-symbols-outlined text-white text-2xl">shield</span>
+                </div>
+                <h1 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">Study Shield</h1>
+            </div>
+            <nav class="hidden lg:flex items-center gap-8"><a
+                    class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors py-2"
+                    href="#">Book a Lesson</a>
+                    <a
+                        class="text-sm font-medium text-primary py-2"
+                    href="#">Home</a>
+                <a class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors py-2"
+                    href="#">Schedule</a>
+                <a class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors py-2"
+                    href="#">Messages</a>
+                <a class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors py-2"
+                    href="#">Rewards & Levels</a>
+                <a class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors py-2 flex items-center gap-2"
+                    href="#">
+                    <span class="material-symbols-outlined text-lg">notifications</span>
+                    Notifications
+                </a>
+                <a class="text-sm font-medium text-slate-500 dark:text-slate-400 hover:text-primary transition-colors py-2 flex items-center gap-2"
+                    href="#">
+                    <img alt="Profile" class="w-6 h-6 rounded-full object-cover"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEZ1GTLC0y38JcvszkvObjTReYmHk6ho0LuQA5BndynDLkdG1mclyOj8PqJVjtmEpdVRtCyJJzFgV2FgmxRb_uwup4GV6UPZekLBUiXEVT5zKpbvZKLobQ4QWhp9Leg8HP_KeKYvOl6CDu64M5M3Bk88V-ljRwjtv2l128K1OV9sb9tL7aEqK_mB1j_coFe2rVd4H4Y-R9ESwGqD-Ujkw5_DBUc0Rz4GCUvSR89GBPA4Yar6XPXON0RuS6K0XqlEwwyACbuG6ch-Q" />
+                    Profile
+                </a>
+            </nav>
+
+        </div>
+    </header>
+    <main class="max-w-[1440px] mx-auto p-6 lg:p-10 lg:py-12">
+        <!-- Welcome Hero Section -->
+        <div class="mb-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+            <div>
+                <h2 class="text-3xl font-black text-slate-900 dark:text-white tracking-tight">Welcome back, Alex! 👋
+                </h2>
+                <p class="text-slate-500 dark:text-slate-400 mt-1 max-w-xl italic">"The secret of getting ahead is
+                    getting started." — Daily Study Tip</p>
+            </div>
+            <div class="flex items-center gap-3">
+                <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Current Status:</span>
+                <span
+                    class="px-3 py-1 bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400 text-xs font-bold rounded-full flex items-center gap-1.5"><span
+                        class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse"></span>
+                    Active Now</span>
+            </div>
+        </div>
+        <!-- Dashboard Grid -->
+        <div class="grid grid-cols-12 gap-6">
+            <!-- Left Column: Focus Widgets -->
+            <div class="col-span-12 lg:col-span-8 space-y-6">
+                <!-- Online Meeting Launcher -->
+                <div
+                    class="bg-gradient-to-r from-primary to-blue-600 rounded-2xl p-8 text-white flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl shadow-primary/20">
+                    <div class="flex items-center gap-5">
+                        <div class="bg-white/20 p-4 rounded-lg"><span
+                                class="material-symbols-outlined text-4xl">speed</span></div>
+                        <div>
+                            <h3 class="text-xl font-bold">Upcoming: Advanced Mathematics</h3>
+                            <p class="text-white/80 font-medium">Starts in 14 minutes • Tutor: Dr. Emily Sarah</p>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full md:w-auto px-8 py-3 bg-white text-primary font-bold rounded-lg hover:bg-slate-50 transition-colors shadow-sm flex items-center justify-center gap-2">
+                        <span class="material-symbols-outlined leading-none">play_circle</span>
+                        Join Meeting
+                    </button>
+                </div>
+                <!-- Schedule & Messages Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Schedule Preview -->
+                    <div
+                        class="bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 rounded-2xl overflow-hidden shadow-sm">
+                        <div
+                            class="p-5 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                            <h3 class="font-bold flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">calendar_month</span>
+                                Today's Schedule
+                            </h3>
+                            <a class="text-xs font-bold text-primary hover:underline" href="#">View All</a>
+                        </div>
+                        <div class="p-4 space-y-4 p-5">
+                            <div
+                                class="flex items-start gap-4 p-3 rounded-lg bg-slate-50 dark:bg-slate-800/50 border-l-4 border-primary">
+                                <div class="text-center min-w-[48px]">
+                                    <p class="text-xs font-bold text-slate-400 uppercase">4:00</p>
+                                    <p class="text-xs font-bold text-slate-400 uppercase">PM</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold">Advanced Mathematics</p>
+                                    <p class="text-xs text-slate-500">Video Call Session</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-start gap-4 p-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                                <div class="text-center min-w-[48px]">
+                                    <p class="text-xs font-bold text-slate-400 uppercase">6:30</p>
+                                    <p class="text-xs font-bold text-slate-400 uppercase">PM</p>
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-slate-700 dark:text-slate-300">Physics Peer Review
+                                    </p>
+                                    <p class="text-xs text-slate-500">Group Study Room</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Message Snippets -->
+                    <div
+                        class="bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 rounded-2xl overflow-hidden shadow-sm">
+                        <div
+                            class="p-5 border-b border-slate-100 dark:border-slate-800 flex justify-between items-center">
+                            <h3 class="font-bold flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">chat_bubble</span>
+                                Messages
+                            </h3>
+                            <span class="bg-accent-orange text-white text-[10px] font-bold px-2 py-0.5 rounded-full">2
+                                NEW</span>
+                        </div>
+                        <div class="p-4 space-y-4 p-5">
+                            <div
+                                class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer">
+                                <img alt="Tutor Sarah" class="w-10 h-10 rounded-full"
+                                    data-alt="Close up portrait of a smiling female tutor"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSey_G4Uu8Kddp6WjpOSvRSzlAIpp1gJ7IGTQjuTEz8SxMcm2aEx2967FxNl6USfCL8yqKcA-RLI5q9fbEOwxtflSFh_DCfCKjdFIg-1MHqiNdFDSPWN6wUJ-N4_rGftlpesUT8JmMwSyP_BPN9k7llqFJ4K1LRjSPuEgPoTtBsRavgOSAe4PkKqnhnQ7y1t1-ll27Hf89DoGFf3392gzcdT-rg6xwkjKFS6U8Ter4Rn2YuXofH_UmXYSzHmo5znpjJs-L4ZaMMkQ" />
+                                <div class="flex-1 overflow-hidden">
+                                    <div class="flex justify-between">
+                                        <p class="text-sm font-bold">Dr. Emily Sarah</p>
+                                        <span class="text-[10px] text-slate-400">12m ago</span>
+                                    </div>
+                                    <p class="text-xs text-slate-500 truncate font-medium">I've uploaded the practice
+                                        worksheet...</p>
+                                </div>
+                            </div>
+                            <div
+                                class="flex items-center gap-3 p-2 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer">
+                                <img alt="Student Mike" class="w-10 h-10 rounded-full"
+                                    data-alt="Portrait of a young male student wearing glasses"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_ns8Im0355KthEhqfFW6TmZmjzkPvZAfQyYnZ4PkEp_wc5ei3WbOhwvuuk9Licw49OsTo_CJS2KeGPlmk6YNRP7keLU2l_G1ZoeSmra5s87Iy2Nk10UvMANdWpR_XxKqhcWkEnlm8Q67f1KYdWU1kHR_O22Oi2jfjQSUFxFs-aVVStAu37QFwoMv_z32LMsJk7pGeXB9rcmuclBjFvYe72CwpltPD8_UmBc2SyRzG7Hcq-u6tuQCoQhkvdBTvKu5G-PKW9zOfZH0" />
+                                <div class="flex-1 overflow-hidden">
+                                    <div class="flex justify-between">
+                                        <p class="text-sm font-bold">Mike Thompson</p>
+                                        <span class="text-[10px] text-slate-400">2h ago</span>
+                                    </div>
+                                    <p class="text-xs text-slate-500 truncate">Are we still meeting tonight?</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Featured Section: Rewards Banner -->
+                <div
+                    class="bg-gradient-to-br from-[#0f172a] to-[#1e40af] rounded-2xl p-10 text-white flex flex-col md:flex-row items-center gap-10 relative overflow-hidden shadow-2xl shadow-blue-900/20">
+                    <div class="absolute -right-20 -top-20 opacity-10">
+                        <span class="material-symbols-outlined text-[240px]">trophy</span>
+                    </div>
+                    <div class="relative z-10 flex-1">
+                        <div
+                            class="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-xs font-bold text-white mb-4">
+                            <span class="material-symbols-outlined text-sm">stars</span>
+                            SEASON REWARDS
+                        </div>
+                        <h3 class="text-3xl font-black mb-3 italic">Unlock the "Quantum Scholar" Badge</h3>
+                        <p class="text-white/70 mb-6 max-w-md">Complete 3 more advanced science sessions this week to
+                            earn your legendary status and 500 bonus XP.</p>
+                        <button
+                            class="bg-accent-orange hover:bg-orange-600 transition-colors text-white font-bold py-3 px-8 rounded-lg">Check
+                            Progress</button>
+                    </div>
+                    <div class="relative z-10 grid grid-cols-2 gap-4">
+                        <div class="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/10 text-center">
+                            <p class="text-2xl font-black text-accent-orange">12</p>
+                            <p class="text-[10px] uppercase font-bold tracking-widest text-white/60">Badges</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm p-4 rounded-xl border border-white/10 text-center">
+                            <p class="text-2xl font-black text-accent-orange">85%</p>
+                            <p class="text-[10px] uppercase font-bold tracking-widest text-white/60">Success</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Right Column: Gamification & Actions -->
+            <div class="col-span-12 lg:col-span-4 space-y-6">
+                <!-- Progress & Levels Card -->
+                <div
+                    class="bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 rounded-2xl p-6 shadow-sm">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="font-bold flex items-center gap-2">
+                            <span class="material-symbols-outlined text-accent-orange">military_tech</span>
+                            Rewards &amp; Levels
+                        </h3>
+                        <span class="text-xs font-bold text-slate-400">RANK #12</span>
+                    </div>
+                    <div class="text-center mb-6">
+                        <div class="relative inline-block"><svg class="w-36 h-36 transform -rotate-90">
+                                <circle class="text-slate-100 dark:text-slate-800" cx="72" cy="72" fill="transparent"
+                                    r="64" stroke="currentColor" stroke-width="10"></circle>
+                                <circle class="text-primary shadow-lg" cx="72" cy="72" fill="transparent" r="64"
+                                    stroke="currentColor" stroke-dasharray="402" stroke-dashoffset="100"
+                                    stroke-linecap="round" stroke-width="10"></circle>
+                            </svg>
+                            <div class="absolute inset-0 flex flex-col items-center justify-center rotate-90">
+                                <span class="text-4xl font-black text-slate-900 dark:text-white">12</span>
+                                <span
+                                    class="text-[11px] font-bold text-slate-500 uppercase tracking-widest">Level</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-end">
+                            <span class="text-sm font-bold">XP Progress</span>
+                            <span class="text-xs font-medium text-slate-500">2,450 / 2,900 XP</span>
+                        </div>
+                        <div class="h-2 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
+                            <div class="h-full bg-primary rounded-full" style="width: 75%"></div>
+                        </div>
+                        <p class="text-[11px] text-slate-500 text-center font-medium">450 XP until Level 13</p>
+                    </div>
+                    <div class="mt-8 grid grid-cols-4 gap-2">
+                        <div
+                            class="aspect-square bg-slate-50 dark:bg-slate-800/50 rounded-xl flex items-center justify-center text-slate-300 hover:text-primary transition-colors border border-transparent hover:border-primary/20 cursor-help group relative">
+                            <span class="material-symbols-outlined text-xl">workspace_premium</span>
+                        </div>
+                        <div
+                            class="aspect-square bg-blue-50 dark:bg-primary/10 rounded-xl flex items-center justify-center text-primary border border-primary/20 cursor-help">
+                            <span class="material-symbols-outlined text-xl">rocket_launch</span>
+                        </div>
+                        <div
+                            class="aspect-square bg-orange-50 dark:bg-accent-orange/10 rounded-xl flex items-center justify-center text-accent-orange border border-accent-orange/20 cursor-help">
+                            <span class="material-symbols-outlined text-xl">verified</span>
+                        </div>
+                        <div
+                            class="aspect-square bg-slate-50 dark:bg-slate-800/50 rounded-xl flex items-center justify-center text-slate-300 border border-transparent cursor-not-allowed opacity-50">
+                            <span class="material-symbols-outlined text-xl">lock</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Book Lesson CTA Card -->
+                <div class="bg-accent-orange rounded-xl p-6 text-white shadow-xl shadow-accent-orange/20">
+                    <span class="material-symbols-outlined text-4xl mb-4">add_task</span>
+                    <h3 class="text-xl font-bold mb-2">Need a Tutor?</h3>
+                    <p class="text-white/80 text-sm mb-6 leading-relaxed">Schedule a private 1-on-1 session with our
+                        top-rated instructors across 40+ subjects.</p>
+                    <button
+                        class="w-full bg-slate-900 hover:bg-black transition-colors py-3 rounded-lg font-bold text-sm">Book
+                        a Lesson Now</button>
+                </div>
+                <!-- Quick Stats -->
+                <div
+                    class="bg-white dark:bg-slate-900 border border-slate-200/60 dark:border-slate-800/60 rounded-2xl p-6 shadow-sm">
+                    <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-4">Weekly Snapshot</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-8 h-8 rounded bg-primary/10 flex items-center justify-center text-primary">
+                                    <span class="material-symbols-outlined text-sm">timer</span>
+                                </div>
+                                <span class="text-sm font-medium">Study Hours</span>
+                            </div>
+                            <span class="text-sm font-bold">12.5 hrs</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-8 h-8 rounded bg-green-500/10 flex items-center justify-center text-green-500">
+                                    <span class="material-symbols-outlined text-sm">check_circle</span>
+                                </div>
+                                <span class="text-sm font-medium">Tasks Completed</span>
+                            </div>
+                            <span class="text-sm font-bold">24</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-3">
+                                <div
+                                    class="w-8 h-8 rounded bg-accent-orange/10 flex items-center justify-center text-accent-orange">
+                                    <span class="material-symbols-outlined text-sm">trending_up</span>
+                                </div>
+                                <span class="text-sm font-medium">Efficiency</span>
+                            </div>
+                            <span class="text-sm font-bold text-green-500">+12%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer Mobile Nav (Visible only on small screens) -->
+    <div
+        class="lg:hidden fixed bottom-0 left-0 right-0 bg-white dark:bg-background-dark border-t border-slate-200 dark:border-slate-800 p-3 flex justify-around items-center z-50">
+        <button class="flex flex-col items-center gap-1 text-primary">
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="text-[10px] font-bold">Home</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-slate-400">
+            <span class="material-symbols-outlined">calendar_month</span>
+            <span class="text-[10px] font-bold">Plan</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-slate-400">
+            <span class="material-symbols-outlined">chat</span>
+            <span class="text-[10px] font-bold">Chat</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-slate-400">
+            <span class="material-symbols-outlined">account_circle</span>
+            <span class="text-[10px] font-bold">Profile</span>
+        </button>
+    </div>
+</body>
+
+</html>
