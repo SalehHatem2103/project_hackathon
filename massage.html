@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Study Shield - Academic Messages</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "accent-orange": "#f97316",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .message-bubble-teacher {
+            background-color: #ffffff;
+            border: 1px solid #e2e8f0;
+        }
+
+        .message-bubble-student {
+            background-color: #135bec;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100">
+    <div class="relative flex h-screen w-full flex-col overflow-hidden">
+        <!-- Top Navigation Bar -->
+        <header
+            class="flex h-16 w-full items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 shrink-0">
+            <div class="flex items-center gap-8">
+                <div class="flex items-center gap-2">
+                    <div class="text-primary">
+                        <svg class="size-8" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z"
+                                fill="currentColor"></path>
+                        </svg>
+                    </div>
+                    <h2 class="text-xl font-bold tracking-tight">Study Shield</h2>
+                </div>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Dashboard</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Courses</a>
+                    <a class="text-sm font-bold text-primary" href="#">Messages</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Resources</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <label class="hidden lg:flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-1.5 w-64">
+                    <span class="material-symbols-outlined text-slate-400 text-xl">search</span>
+                    <input class="bg-transparent border-none focus:ring-0 text-sm w-full"
+                        placeholder="Search resources..." type="text" />
+                </label>
+                <button
+                    class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors relative">
+                    <span class="material-symbols-outlined">notifications</span>
+                    <span class="absolute top-2 right-2 size-2 bg-accent-orange rounded-full"></span>
+                </button>
+                <div class="size-9 rounded-full bg-slate-200 overflow-hidden border border-slate-200">
+                    <img class="w-full h-full object-cover" data-alt="Student profile picture showing a young adult"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPtbw22w7twOYReNEY88CbY_eqT94irFYvELnHwkzmGD08dTkfUgfuK5h2ZAhOhTZJfXV-l7ZnuBFNLBjT8eWuvNdT3aivWoY-2xCftqwm25PCIhO1Bghs4rPgDc-mO3pn3iBGP0xMkCerKYAOCcjdUd8mkSSPPdKANZz7uD-_n4cnLnyIz1IxsMSzP9f_UIpNHsdWHtK3HCagIO340JMgnheD4NqGhW7ae7l7se-LgdeCdZ9pN6SFXjC1s0rA3Ai3Nsxef6-TGh0" />
+                </div>
+            </div>
+        </header>
+        <main class="flex flex-1 overflow-hidden">
+            <!-- Sidebar: Conversation List -->
+            <aside
+                class="flex w-80 flex-col border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900">
+                <div class="p-4 space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h1 class="text-lg font-bold">Conversations</h1>
+                        <button
+                            class="p-1.5 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors">
+                            <span class="material-symbols-outlined text-lg">edit_square</span>
+                        </button>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <div
+                            class="flex items-center gap-2 px-3 py-2 rounded-lg bg-primary/10 text-primary cursor-pointer">
+                            <span class="material-symbols-outlined text-xl">inbox</span>
+                            <span class="text-sm font-semibold">All Messages</span>
+                        </div>
+                        <div
+                            class="flex items-center gap-2 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer">
+                            <span class="material-symbols-outlined text-xl">mark_chat_unread</span>
+                            <span class="text-sm font-medium">Unread</span>
+                            <span
+                                class="ml-auto bg-accent-orange text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full">3</span>
+                        </div>
+                    </div>
+                    <label class="flex items-center bg-slate-100 dark:bg-slate-800 rounded-lg px-3 py-2">
+                        <span class="material-symbols-outlined text-slate-400 text-lg">search</span>
+                        <input class="bg-transparent border-none focus:ring-0 text-xs w-full"
+                            placeholder="Search teachers..." type="text" />
+                    </label>
+                </div>
+                <div class="flex-1 overflow-y-auto custom-scrollbar">
+                    <!-- Conversation Card 1 (Active) -->
+                    <div
+                        class="flex items-start gap-3 p-4 bg-slate-50 dark:bg-slate-800/50 border-l-4 border-primary cursor-pointer transition-colors">
+                        <div class="relative shrink-0">
+                            <img class="size-12 rounded-full object-cover"
+                                data-alt="Headshot of Professor Sarah Jenkins"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBye4aw4-2Y4ZXcNesjI1GdFTbnYRUc5KiLz5HmKKWhYVFpcAf1kQZJLwG2KSWYkI_tKvAkeo-KzFQEWIl1r3rOTLD7Zc_h3dcmJAuL9LPVcxUNqWzg4CUqhPQ6oCYQCKzMYVWWEQu0yq68NpbibGhPvPURWnVnb31IjG5Se-sSZ-0IaTRnrCvN0xvjBby5WN4q4nm8n-geYrQlrtQcRC8SMNPlOkn67eIuBneuWoQ4x-I51rrSOKg_pDiWqOZ6XWkr6RdbPVlSm_8" />
+                            <span
+                                class="absolute bottom-0 right-0 size-3 bg-green-500 border-2 border-white dark:border-slate-800 rounded-full"></span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between mb-0.5">
+                                <h3 class="text-sm font-bold truncate">Prof. Sarah Jenkins</h3>
+                                <span class="text-[10px] text-slate-400">10:45 AM</span>
+                            </div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">Regarding your recent
+                                essay submission...</p>
+                        </div>
+                    </div>
+                    <!-- Conversation Card 2 -->
+                    <div
+                        class="flex items-start gap-3 p-4 hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-pointer transition-colors">
+                        <div class="relative shrink-0">
+                            <img class="size-12 rounded-full object-cover" data-alt="Headshot of Dr. Marcus Thorne"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTsB0f2B8HGKAvbGm3W1IPPx_kzeRUdva2ksNqhCgwPiZLveY_ygvYaBcrfEMmaaF56LOIo3a5HMSM214J46d18nzOB7imG0PWAjwMxA8rArE5ViGWoeqC-sE8GbdmLhEWpAhj5i0IEzOPZIr_HQme16Ykn9OGELuVpt0SyVNAWh6Pp6dBBQFL_V3HxlLmACibpLhMw-bTbOv6hdT1Rnk_qk8KsMSYohV-GioRnTAC4snG71Mb4r-_tJTUR_wm1ez6QBO9NOhABjc" />
+                            <span
+                                class="absolute bottom-0 right-0 size-3 bg-slate-300 border-2 border-white dark:border-slate-800 rounded-full"></span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between mb-0.5">
+                                <h3 class="text-sm font-bold truncate">Dr. Marcus Thorne</h3>
+                                <span class="text-[10px] text-slate-400">Yesterday</span>
+                            </div>
+                            <p class="text-xs text-slate-600 dark:text-slate-300 line-clamp-1 font-semibold">The lab
+                                results are in. Please check...</p>
+                        </div>
+                        <div class="mt-1">
+                            <span class="size-2 bg-accent-orange rounded-full block"></span>
+                        </div>
+                    </div>
+                    <!-- Conversation Card 3 -->
+                    <div
+                        class="flex items-start gap-3 p-4 hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-pointer transition-colors">
+                        <div class="relative shrink-0">
+                            <img class="size-12 rounded-full object-cover" data-alt="Headshot of TA Elena Rodriguez"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3FxOYccmGhs_1c2TLMvSPmBuQri9HHdnRtyQLIzpP81_oHWJBI4N15_gDi9cJy9gaVRgYSx2JOwyGEogaWeF-2wbYOw6J0ZL4feWGlxUHmeOQVCa62SbI81sVFBXTvQ9IypWanrWitqmyYwOzKtVeAwJIuIfVqgVAq1E-GLbIbMCSmmTgOgjvQwdGZxLiGPUMNl489CTMo2hC6L-OULaZhUaQPElpIa9f_DGQ6RUXavA2IfAOASZ7ZUB3T0EKaJKThpd1556G_YA" />
+                            <span
+                                class="absolute bottom-0 right-0 size-3 bg-green-500 border-2 border-white dark:border-slate-800 rounded-full"></span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between mb-0.5">
+                                <h3 class="text-sm font-bold truncate">Elena Rodriguez (TA)</h3>
+                                <span class="text-[10px] text-slate-400">Oct 24</span>
+                            </div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">Study group scheduled for
+                                Friday.</p>
+                        </div>
+                    </div>
+                    <!-- Conversation Card 4 -->
+                    <div
+                        class="flex items-start gap-3 p-4 hover:bg-slate-50 dark:hover:bg-slate-800/50 cursor-pointer transition-colors opacity-70">
+                        <div
+                            class="shrink-0 bg-slate-200 dark:bg-slate-800 size-12 rounded-full flex items-center justify-center">
+                            <span class="material-symbols-outlined text-slate-400">group</span>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="flex items-center justify-between mb-0.5">
+                                <h3 class="text-sm font-bold truncate">History 101 Group</h3>
+                                <span class="text-[10px] text-slate-400">Oct 22</span>
+                            </div>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 line-clamp-1">Alex: Has anyone started
+                                the reading?</p>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!-- Main Chat Area -->
+            <section class="flex flex-1 flex-col bg-background-light dark:bg-slate-950 overflow-hidden">
+                <!-- Chat Header -->
+                <header
+                    class="flex h-16 items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 shrink-0">
+                    <div class="flex items-center gap-3">
+                        <div class="relative">
+                            <img class="size-10 rounded-full object-cover"
+                                data-alt="Headshot of Professor Sarah Jenkins"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuChISIaBz71Dmevu6gq1XFpoNiXLBBpZUXuqQtK--J9BIXUN4kUWeCVI-qyHl7tAD4qX4qJAJaKghJ7wyTBRms-qL2mOPBZSdaTdDYTP0q-_EPSWKGeoiqgepX8CwXzwER7mKst6KOdn9Md_oUilSqtOtLTkF_U1Kh56bnKaIZXVcLKtDoGgdBFNs33BZfJMddAXyhMJG28_a_CXU6D-QogzbOPmwhRbzSldt5VyZ4APLk7Mda6hjZY8vdc6K3zmW_pmiWtdKRqK08" />
+                            <span
+                                class="absolute bottom-0 right-0 size-2.5 bg-green-500 border-2 border-white dark:border-slate-900 rounded-full"></span>
+                        </div>
+                        <div>
+                            <h2 class="text-sm font-bold">Prof. Sarah Jenkins</h2>
+                            <div class="flex items-center gap-2">
+                                <span
+                                    class="text-[10px] font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wider">English
+                                    Literature Department</span>
+                                <span class="size-1 bg-slate-300 rounded-full"></span>
+                                <span class="text-[10px] text-green-600 font-semibold uppercase tracking-wider">In
+                                    Office Hours</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+                            <span class="material-symbols-outlined">call</span>
+                        </button>
+                        <button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+                            <span class="material-symbols-outlined">videocam</span>
+                        </button>
+                        <button class="p-2 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">
+                            <span class="material-symbols-outlined">info</span>
+                        </button>
+                    </div>
+                </header>
+                <!-- Chat Content (Scrollable) -->
+                <div class="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar">
+                    <!-- Date Divider -->
+                    <div class="flex items-center gap-4">
+                        <div class="h-[1px] flex-1 bg-slate-200 dark:bg-slate-800"></div>
+                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">October 26,
+                            2023</span>
+                        <div class="h-[1px] flex-1 bg-slate-200 dark:bg-slate-800"></div>
+                    </div>
+                    <!-- Teacher Message -->
+                    <div class="flex items-end gap-3 max-w-[80%]">
+                        <img class="size-8 rounded-full object-cover shrink-0"
+                            data-alt="Small headshot of Professor Jenkins"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVSBt48P8a6mDNP_pGFXEqoUu6GBFiqCXeVLsXGnVvRTY4zfG5_qBOC-S4Bg3_mEVEopxUoppZrsnAqHF9XecCNqdUG4sxzU9_vCHpOoaRURXi7sSSyVfEjJZj7hdwEv3WaUds66UbWWF3k67UDp57Zqr2gQsEdNZw_DXjalHRBq_QPE77IpUduQ-4-SNSo-n9-1DnkTWJWvFUsE-34LfImX_WNMYrl91anG9_PEL7VVBRNWGLMO-zVwgd2uQIEay6g0QYFhoFOZs" />
+                        <div class="space-y-1">
+                            <div
+                                class="message-bubble-teacher p-4 rounded-xl rounded-bl-none shadow-sm dark:bg-slate-900 dark:border-slate-800">
+                                <p class="text-sm leading-relaxed">Hello Julian, I've just finished reviewing your draft
+                                    for the Victorian Literature essay. Overall, your thesis is strong, but you could
+                                    expand more on the industrial revolution's impact on Dickens' writing style.</p>
+                            </div>
+                            <span class="text-[10px] text-slate-400 ml-1">10:30 AM</span>
+                        </div>
+                    </div>
+                    <!-- Student Message -->
+                    <div class="flex flex-row-reverse items-end gap-3 max-w-[80%] ml-auto">
+                        <div class="space-y-1 text-right">
+                            <div class="message-bubble-student p-4 rounded-xl rounded-br-none shadow-sm">
+                                <p class="text-sm leading-relaxed">Thank you, Professor! That makes a lot of sense. I'll
+                                    research some specific historical contexts from 1850-1860 to support that section.
+                                    Should I resubmit it by Friday?</p>
+                            </div>
+                            <span class="text-[10px] text-slate-400 mr-1">10:42 AM · Read</span>
+                        </div>
+                    </div>
+                    <!-- Teacher Message -->
+                    <div class="flex items-end gap-3 max-w-[80%]">
+                        <img class="size-8 rounded-full object-cover shrink-0"
+                            data-alt="Small headshot of Professor Jenkins"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmSdlgrJcYmq8AjUqRlbyWWbaouBuuUKL8cChwqatcRXl_LFlr3UHojWRFTM-botExQjGvbK5Y0aeMGm-Z07TWuz9Dp3rTkPXtqFdI56qjt9yMLOhTB9O6ioBFZHJ5xZrDrzmQVUq5cnwiuSbOQUqOuLPUwfZ7xI-SVHR82crkrevO_SkWTBRL2ntGEei2HtoRVfGeQP1r7DyLQz4eZ3IGbFHzewaW0hh9_1dBw3dM8gBXdpjcNPyQWT3dsHs2DXEhWGw_uGq2U-o" />
+                        <div class="space-y-1">
+                            <div
+                                class="message-bubble-teacher p-4 rounded-xl rounded-bl-none shadow-sm dark:bg-slate-900 dark:border-slate-800">
+                                <p class="text-sm leading-relaxed">Yes, Friday at 5 PM would be perfect. I'm also
+                                    attaching a list of recommended readings that might help you with the context.</p>
+                                <!-- Attachment Preview -->
+                                <div
+                                    class="mt-3 flex items-center gap-3 p-2 bg-slate-50 dark:bg-slate-800 rounded-lg border border-slate-200 dark:border-slate-700">
+                                    <span class="material-symbols-outlined text-primary">description</span>
+                                    <div class="flex-1 min-w-0">
+                                        <p class="text-xs font-bold truncate">Victorian_Reading_List.pdf</p>
+                                        <p class="text-[10px] text-slate-500">1.2 MB</p>
+                                    </div>
+                                    <button class="text-primary hover:text-blue-700">
+                                        <span class="material-symbols-outlined text-lg">download</span>
+                                    </button>
+                                </div>
+                            </div>
+                            <span class="text-[10px] text-slate-400 ml-1">10:45 AM</span>
+                        </div>
+                    </div>
+                    <!-- System Notification -->
+                    <div class="text-center">
+                        <span
+                            class="text-[11px] font-medium text-slate-400 bg-slate-100 dark:bg-slate-800 px-3 py-1 rounded-full italic">Assignment
+                            'Final Draft' deadline updated to Oct 30</span>
+                    </div>
+                </div>
+                <!-- Message Input Area -->
+                <footer class="p-4 bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800">
+                    <div class="max-w-4xl mx-auto flex items-end gap-3">
+                        <div class="flex flex-col flex-1 bg-slate-100 dark:bg-slate-800 rounded-xl overflow-hidden">
+                            <!-- Attachment Placeholder (Hidden until triggered) -->
+                            <div
+                                class="hidden px-4 py-2 border-b border-slate-200 dark:border-slate-700 flex items-center justify-between">
+                                <div class="flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-slate-400 text-sm">attachment</span>
+                                    <span
+                                        class="text-xs font-medium text-slate-600 dark:text-slate-400">essay_v2.docx</span>
+                                </div>
+                                <button class="text-slate-400 hover:text-red-500">
+                                    <span class="material-symbols-outlined text-sm">close</span>
+                                </button>
+                            </div>
+                            <div class="flex items-center gap-2 px-2 py-1">
+                                <button
+                                    class="p-2 text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg transition-colors">
+                                    <span class="material-symbols-outlined">attach_file</span>
+                                </button>
+                                <textarea
+                                    class="flex-1 bg-transparent border-none focus:ring-0 text-sm resize-none py-3 h-11 max-h-32 custom-scrollbar"
+                                    placeholder="Type your message here..." rows="1"></textarea>
+                                <button
+                                    class="p-2 text-slate-500 hover:bg-slate-200 dark:hover:bg-slate-700 rounded-lg transition-colors">
+                                    <span class="material-symbols-outlined">mood</span>
+                                </button>
+                            </div>
+                        </div>
+                        <button
+                            class="size-11 flex items-center justify-center bg-primary text-white rounded-xl hover:bg-blue-700 transition-shadow shadow-lg shadow-primary/20 shrink-0">
+                            <span class="material-symbols-outlined">send</span>
+                        </button>
+                    </div>
+                    <p class="text-[10px] text-center text-slate-400 mt-2">
+                        Press Shift + Enter for a new line. Only teachers in this course can view this message.
+                    </p>
+                </footer>
+            </section>
+        </main>
+    </div>
+    <style>
+        /* Custom thin scrollbar */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #334155;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</body>
+
+</html>
