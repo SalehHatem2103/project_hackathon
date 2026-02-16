@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Login - Study Shield</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "accent-orange": "#f97316",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .checkbox-custom:checked {
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col">
+    <!-- Top Navigation Bar -->
+   <header
+            class="fixed top-0 z-50 w-full border-b border-slate-200 bg-white/80 backdrop-blur-md dark:border-slate-800 dark:bg-background-dark/80">
+            <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+                <div class="flex items-center ">
+                    <img src="imgs/logo.png" alt="Study Shield Logo" class="h-20 w-auto">
+                    <h2 class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white mb-2">Study Shield
+                    </h2>
+                </div>
+                <nav class="hidden md:flex flex-1 justify-center gap-10">
+                    <a class="text-sm font-semibold text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-white transition-colors"
+                        href="./index.html">Home</a>
+                    <a class="text-sm font-semibold text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-white transition-colors"
+                        href="#">Features</a>
+                    <a class="text-sm font-semibold text-slate-600 hover:text-primary dark:text-slate-300 dark:hover:text-white transition-colors"
+                        href="#">About</a>
+                </nav>
+                <div class="flex items-center gap-3">
+                    <button
+                        class="hidden sm:flex h-10 items-center justify-center rounded-lg px-5 text-sm font-bold text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800 transition-all">
+                        Login
+                    </button>
+                    <a href="signup.html"
+                        class="flex h-10 items-center justify-center rounded-lg bg-primary px-6 text-sm font-bold text-white shadow-lg shadow-primary/20 hover:bg-primary/90 transition-all active:scale-95">
+                        Sign Up
+                    </a>
+                </div>
+            </div>
+        </header>
+    <!-- Main Content Area -->
+    <main class="flex-1 flex items-center justify-center p-6">
+        <div class="w-full max-w-[440px]">
+            <!-- Login Card -->
+            <div
+                class="bg-white dark:bg-gray-900 shadow-xl shadow-primary/5 rounded-xl border border-gray-100 dark:border-gray-800 p-8 md:p-10">
+                <div class="mb-8 text-center">
+                    <h2 class="text-3xl font-black text-gray-900 dark:text-white mb-2">Welcome back</h2>
+                    <p class="text-gray-500 dark:text-gray-400">Login to your safe study space</p>
+                </div>
+                <form class="space-y-5" onsubmit="return false;">
+                    <!-- Email Field -->
+                    <div class="space-y-2">
+                        <label class="text-sm font-semibold text-gray-700 dark:text-gray-300" for="email">Email
+                            Address</label>
+                        <div class="relative group">
+                            <div
+                                class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-primary transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">mail</span>
+                            </div>
+                            <input
+                                class="w-full pl-11 pr-4 py-3.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder:text-gray-400 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                                id="email" placeholder="e.g. alex@student.com" type="email" />
+                        </div>
+                    </div>
+                    <!-- Password Field -->
+                    <div class="space-y-2">
+                        <div class="flex justify-between items-center">
+                            <label class="text-sm font-semibold text-gray-700 dark:text-gray-300"
+                                for="password">Password</label>
+                        </div>
+                        <div class="relative group">
+                            <div
+                                class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-primary transition-colors">
+                                <span class="material-symbols-outlined text-[20px]">lock</span>
+                            </div>
+                            <input
+                                class="w-full pl-11 pr-12 py-3.5 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder:text-gray-400 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                                id="password" placeholder="••••••••" type="password" />
+                            <button
+                                class="absolute inset-y-0 right-0 pr-4 flex items-center text-gray-400 hover:text-primary transition-colors"
+                                type="button">
+                                <span class="material-symbols-outlined text-[20px]">visibility</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Helper Row -->
+                    <div class="flex items-center justify-between py-1">
+                        <label class="flex items-center gap-2 cursor-pointer group">
+                            <input
+                                class="checkbox-custom w-5 h-5 rounded border-gray-300 dark:border-gray-700 text-primary focus:ring-primary focus:ring-offset-0 bg-transparent transition-all"
+                                type="checkbox" />
+                            <span
+                                class="text-sm font-medium text-gray-600 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white transition-colors">Remember
+                                Me</span>
+                        </label>
+                        <a class="text-sm font-semibold text-primary hover:underline underline-offset-4" href="#">Forgot
+                            Password?</a>
+                    </div>
+                    <!-- Submit Button -->
+                    <button
+                        class="w-full py-4 bg-primary text-white font-bold rounded-lg hover:bg-blue-700 active:scale-[0.98] transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 group"
+                        type="submit">
+                        <span>Log In</span>
+                        <span
+                            class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+                </form>
+                <!-- Footer CTA -->
+                <div class="mt-8 pt-6 border-t border-gray-100 dark:border-gray-800 text-center">
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">
+                        Don't have an account?
+                        <a class="text-accent-orange font-bold hover:underline underline-offset-4 ml-1" href="#">Sign Up
+                            for free</a>
+                    </p>
+                </div>
+            </div>
+            <!-- Decorative Element -->
+            <div class="mt-8 flex justify-center gap-6 grayscale opacity-40">
+                <div class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">verified_user</span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest">Safe Study</span>
+                </div>
+                <div class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-sm">encrypted</span>
+                    <span class="text-[10px] font-bold uppercase tracking-widest">Encrypted</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Simple Footer -->
+    <footer class="py-6 px-6 text-center">
+        <p class="text-xs text-gray-400 dark:text-gray-600">
+            © 2026 Study Shield. All rights reserved.
+            <span class="mx-2">|</span>
+            <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
+            <span class="mx-2">|</span>
+            <a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
+        </p>
+    </footer>
+</body>
+
+</html>
