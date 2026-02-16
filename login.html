@@ -92,7 +92,7 @@
                     <h2 class="text-3xl font-black text-gray-900 dark:text-white mb-2">Welcome back</h2>
                     <p class="text-gray-500 dark:text-gray-400">Login to your safe study space</p>
                 </div>
-                <form class="space-y-5" onsubmit="return false;">
+                <form class="space-y-5" onsubmit="handleLogin(event)">
                     <!-- Email Field -->
                     <div class="space-y-2">
                         <label class="text-sm font-semibold text-gray-700 dark:text-gray-300" for="email">Email
@@ -182,6 +182,29 @@
             <a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
         </p>
     </footer>
+    <script>
+function handleLogin(event) {
+    event.preventDefault();
+    
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // Student credentials: 321@gmail.com و 1
+    if (email === '321@gmail.com' && password === '1') {
+        window.location.href = './student.html';
+        return;
+    }
+
+    // Teacher credentials: 123@gmail.com و 2
+    if (email === '123@gmail.com' && password === '2') {
+        window.location.href = './teacher.html';
+        return;
+    }
+    
+    // خطأ في البيانات
+    alert('Error: Invalid email or password. Please try again.');
+}
+</script>
 </body>
 
 </html>
